@@ -3,3 +3,7 @@ export enum AuthRoute {
     REGISTER = 'register',
     LOGIN = 'login'
 }
+
+export enum GlobalRoute {
+    PREFIX = 'api'
+}
