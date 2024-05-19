@@ -18,9 +18,7 @@ export class AuthController {
   @Post('login')
   async login(@Req() req, @Res() res) {
    const response = await this.authService.login(req.user)
-
    res.status(response.responseCode).send(response)
-   // return this.authService.findAll();
   }
 
 }
