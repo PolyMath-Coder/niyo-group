@@ -3,6 +3,7 @@ import { AuthService } from './auth.service';
 import { RegisterDto } from './dto/auth.dto';
 import { AuthRoute } from 'src/shared/constants';
 import { AuthGuard } from '@nestjs/passport';
+import { LocalAuthGuard } from './guards/local-auth.guard';
 
 @Controller(AuthRoute.AUTH)
 export class AuthController {
@@ -14,7 +15,8 @@ export class AuthController {
      res.status(response.responseCode).send(response)
   }
 
-  @UseGuards(AuthGuard('local'))
+
+ @UseGuards(LocalAuthGuard)
   @Post('login')
   async login(@Req() req, @Res() res) {
    const response = await this.authService.login(req.user)

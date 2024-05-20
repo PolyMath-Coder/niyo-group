@@ -21,6 +21,24 @@ export class RegisterDto {
     password: string
 }
 
+export class UserDto {
+    @IsNotEmpty()
+    _id: ObjectId
+
+    @IsNotEmpty()
+    @IsString()
+    firstName: string
+
+    @IsNotEmpty()
+    @IsString()
+    lastName: string
+
+    @IsNotEmpty()
+    @IsString()
+    @IsEmail()
+    email: string
+}
+
 export class LoginDto {
     @IsNotEmpty()
     _id: ObjectId

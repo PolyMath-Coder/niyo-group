@@ -6,12 +6,13 @@ import { UserEntity } from 'src/shared/entities.ts/user.entity';
 import { JwtModule } from '@nestjs/jwt';
 import { config } from 'dotenv';
 import { PassportModule } from '@nestjs/passport';
-import { LocalStrategy } from './local.strategy';
+import { LocalStrategy } from './strategies/local.strategy';
+import { JwtStrategy } from './strategies/jwt.strategy';
 config()
 
 @Module({
   imports: [TypeOrmModule.forFeature([UserEntity]), PassportModule, JwtModule.register({secret: process.env.JWT_SECRET, signOptions: {expiresIn: '4h'}})],
   controllers: [AuthController],
-  providers: [AuthService, LocalStrategy],
+  providers: [AuthService, JwtStrategy, LocalStrategy],
 })
 export class AuthModule {}
