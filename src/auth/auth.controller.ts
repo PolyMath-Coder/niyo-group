@@ -17,7 +17,7 @@ export class AuthController {
 
 
  @UseGuards(LocalAuthGuard)
-  @Post('login')
+  @Post(AuthRoute.LOGIN)
   async login(@Req() req, @Res() res) {
    const response = await this.authService.login(req.user)
    res.status(response.responseCode).send(response)
