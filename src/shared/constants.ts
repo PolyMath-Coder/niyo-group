@@ -7,7 +7,8 @@ export enum AuthRoute {
 export enum TaskRoute {
     TASKS = 'tasks',
     CREATE = 'create',
-    SINGLE_TASK = ':taskId'
+    SINGLE_TASK = ':taskId',
+    ALL = 'all'
 }
 
 export enum GlobalRoute {

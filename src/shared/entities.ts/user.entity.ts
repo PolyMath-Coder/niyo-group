@@ -1,5 +1,6 @@
 import { ObjectId } from "mongodb";
-import { Column, Entity, ObjectIdColumn } from "typeorm";
+import { TaskEntity } from "src/tasks/entities/task.entity";
+import { Column, Entity, ObjectIdColumn, OneToMany } from "typeorm";
 
 
 @Entity('user')
@@ -18,4 +19,7 @@ export class UserEntity {
 
     @Column()
     password: string
+
+    // @OneToMany(() => TaskEntity, (task) => task.user)
+    // tasks: TaskEntity[];
 }

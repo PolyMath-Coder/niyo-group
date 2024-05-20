@@ -1,5 +1,6 @@
 import { ObjectId, Timestamp } from "mongodb";
-import { Column, CreateDateColumn, Entity, ObjectIdColumn } from "typeorm";
+import { UserEntity } from "src/shared/entities.ts/user.entity";
+import { Column, CreateDateColumn, Entity, ManyToOne, ObjectIdColumn } from "typeorm";
 
 @Entity('task')
 export class TaskEntity {
@@ -33,7 +34,13 @@ export class TaskEntity {
     @Column()
     category: string
 
+    @Column({default: false})
+    isDeleted: boolean
+
     @Column()
     creator: ObjectId
+
+    // @ManyToOne(() => UserEntity, (user) => user.tasks)
+    // user: UserEntity;
 }
 
