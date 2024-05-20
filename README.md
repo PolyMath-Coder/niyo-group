@@ -17,10 +17,6 @@
 
 </div>
 
-<div align="center">
-
-
-
 
 ## Description
 
