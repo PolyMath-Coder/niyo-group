@@ -47,3 +47,7 @@ To run the script for development purpose, run the script indicated below
 # Development
 $ npm run start:dev
 ```
+
+# Sole Contributor
+
+- Ayooluwa Adeleke
