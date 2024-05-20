@@ -34,9 +34,6 @@ export class TaskEntity {
     category: string
 
     @Column()
-    completionDate: Date
-
-    @Column()
     creator: ObjectId
 }
 
